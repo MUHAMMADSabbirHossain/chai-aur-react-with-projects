@@ -18,7 +18,10 @@ function App() {
     }
 
     // counter += 1;
-    setCounter(counter + 1);
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1 )
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
   }
 
   function removeValue() {
