@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, Select } from "../index";
+import { Button, Input, RTE, Select } from "../index";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function PostForm({ post }) {
-  const { register, handleSubmit, watch, setValue, control, getvalues } =
+  const { register, handleSubmit, watch, setValue, control, getValues } =
     useForm({
       defaultValues: {
         title: post?.title || "",
@@ -102,7 +102,7 @@ function PostForm({ post }) {
           label="Content :"
           name="content"
           control={control}
-          defaultValues={getvalues("content")}
+          defaultValue={getValues("content")}
         />
       </div>
       <div className="w-1/3 px-2">

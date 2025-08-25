@@ -3,7 +3,7 @@ import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
 
 function Home() {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     appwriteService.getPosts().then((posts) => {
@@ -12,8 +12,9 @@ function Home() {
       }
     });
   }, []);
+  console.log(posts);
 
-  if (posts.length === 0) {
+  if (posts?.length === 0) {
     return (
       <div className="w-full py-8 mt-4 text-center">
         <Container>
